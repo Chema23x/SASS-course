@@ -5,7 +5,7 @@ const sass = require ("gulp-sass")(require('sass'))
 function buildStyles (){
     //Instead of index.sccs insert *.scss so this will look for all the documents with .scss, this is for multiple sass files,
     // in this case it will look for all the files at the folder or subfolder with a sass file inside
-    return src('shinobi/**/*.scss')
+    return src('Sass/**/*.scss')
     .pipe(sass())
     .pipe(dest('css'))
 }
@@ -13,7 +13,7 @@ function buildStyles (){
 //Watcher function for our source sass file every time we make a change it will automatically reload
 
 function watchTask(){
-    watch(['shinobi/**/*.scss'], buildStyles)
+    watch(['Sass/**/*.scss'], buildStyles)
 }
 
 exports.default = series(buildStyles, watchTask)
